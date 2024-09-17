@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3  # Ignore SQLite database file if it's only for local development
+db.sqlite3
+/media/    # If you are storing media files locally
+
+# Pipenv environment
+Pipfile.lock
+
+# Static files
+staticfiles/
+
+# Ignore node_modules if using frontend libraries
+node_modules/
+
+# Local environment variables
+.env
+.env.*
+
+# Mac specific files
+.DS_Store
