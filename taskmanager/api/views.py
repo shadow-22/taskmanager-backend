@@ -31,12 +31,6 @@ def login(request):
     return Response({'error': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
 
 # Task CRUD APIs
-
-class TaskPagination(PageNumberPagination):
-    page_size = 10  # Number of tasks per page
-    page_size_query_param = 'page_size'  # Allow client to set page size
-    max_page_size = 100  # Maximum page size
-
 # Task List and Create API
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
