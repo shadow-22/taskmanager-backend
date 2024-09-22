@@ -8,6 +8,8 @@ from rest_framework.response import Response
 from django.contrib.auth import authenticate
 from .serializers import UserSerializer, TaskSerializer
 from .models import Task
+from rest_framework.pagination import PageNumberPagination
+from django.core.paginator import Paginator
 
 # Registration API
 @api_view(['POST'])
@@ -32,15 +34,30 @@ def login(request):
 
 # Task CRUD APIs
 
+class TaskPagination(PageNumberPagination):
+    page_size = 5  # Number of tasks per page
+    page_size_query_param = 'page_size'  # Allow client to set page size
+    max_page_size = 100  # Maximum page size
+
 # Task List and Create API
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def task_list_create(request):
     if request.method == 'GET':
         # Handle GET request (List tasks)
-        tasks = Task.objects.filter(user=request.user)
-        serializer = TaskSerializer(tasks, many=True)
-        return Response(serializer.data)
+        tasks = Task.objects.filter(user=request.user).order_by('id')
+
+        # Filtering by completion status
+        is_completed = request.query_params.get('is_completed')
+        if is_completed is not None:
+            tasks = tasks.filter(is_completed=is_completed.lower() == 'true')
+
+        # Pagination
+        paginator = TaskPagination()
+        paginated_tasks = paginator.paginate_queryset(tasks, request)
+        serializer = TaskSerializer(paginated_tasks, many=True)
+        
+        return paginator.get_paginated_response(serializer.data)
 
     elif request.method == 'POST':
         # Handle POST request (Create task)
