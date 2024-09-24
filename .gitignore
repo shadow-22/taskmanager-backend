@@ -29,4 +29,4 @@ node_modules/
 # Mac specific files
 .DS_Store
 
-./taskmanager/superuser.txt
+/taskmanager/superuser.txt
