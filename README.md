@@ -1,6 +1,5 @@
 ### Backend README (Django)
 
-```markdown
 # Task Manager - Backend (Django REST API)
 
 This is the backend part of the **Task Manager** app, built using **Django** and **Django REST Framework**. It provides APIs for managing tasks, user authentication (registration and login), and pagination support.
