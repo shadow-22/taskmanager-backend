@@ -25,21 +25,26 @@ This is the backend part of the **Task Manager** app, built using **Django** and
     cd <repo-directory>/backend
 
 2. **Install dependencies:**
+    ```bash
     pipenv install
 
 3. **Activate the virtual environment:**
+    ```bash
     pipenv shell
 
 4. **Run database migrations:**
+    ```bash
     python manage.py migrate
 
 5. **Create a superuser:**
+    ```bash
     python manage.py createsuperuser
 
 6. **Start the development server:**
+    ```bash
     python manage.py runserver
 
-    The API will be available at http://127.0.0.1:8000/api/
+The API will be available at http://127.0.0.1:8000/api/
 
 7. **API Endpoints:**
 
@@ -53,6 +58,7 @@ This is the backend part of the **Task Manager** app, built using **Django** and
 
 8. **Pagination:**
     GET /api/tasks/?page=<page_number>
+    
     Tasks are paginated with the page parameter.
 
 9. **Filtering:**
