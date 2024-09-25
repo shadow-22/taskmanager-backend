@@ -21,8 +21,10 @@ This is the backend part of the **Task Manager** app, built using **Django** and
 1. **Clone the repository:**
 
     ```bash
-    git clone <repo-url>
-    cd <repo-directory>/backend
+    mkdir backend
+    cd backend
+    git clone https://github.com/shadow-22/taskmanager-backend.git
+    cd taskmanager-backend
 
 2. **Install dependencies:**
     ```bash
@@ -34,6 +36,7 @@ This is the backend part of the **Task Manager** app, built using **Django** and
 
 4. **Run database migrations:**
     ```bash
+    cd taskmanager
     python manage.py migrate
 
 5. **Create a superuser:**
