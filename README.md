@@ -24,35 +24,36 @@ This is the backend part of the **Task Manager** app, built using **Django** and
     git clone <repo-url>
     cd <repo-directory>/backend
 
-2. **Install dependencies**
+2. **Install dependencies:**
     pipenv install
 
-3. **Activate the virtual environment**
+3. **Activate the virtual environment:**
     pipenv shell
 
-4. **Run database migrations**
+4. **Run database migrations:**
     python manage.py migrate
 
-5. **Create a superuser**
+5. **Create a superuser:**
     python manage.py createsuperuser
 
-6. **Start the development server**
+6. **Start the development server:**
     python manage.py runserver
 
 The API will be available at http://127.0.0.1:8000/api/
 
-## API Endpoints
-User Registration: POST /api/register/
-User Login: POST /api/login/
-Task List and Create: GET/POST /api/tasks/
-Task Update and Delete: PUT/DELETE /api/tasks/<id>/
-Pagination and Filtering
-The task listing API supports pagination and filtering:
+7. **API Endpoints**
 
-## Pagination
-GET /api/tasks/?page=<page_number>
-Tasks are paginated with the page parameter.
+    User Registration: POST /api/register/
+    User Login: POST /api/login/
+    Task List and Create: GET/POST /api/tasks/
+    Task Update and Delete: PUT/DELETE /api/tasks/<id>/
+    Pagination and Filtering
+    The task listing API supports pagination and filtering:
 
-## Filtering
-GET /api/tasks/?is_completed=true (or false)
+8. **Pagination**
+    GET /api/tasks/?page=<page_number>
+    Tasks are paginated with the page parameter.
+
+9. **Filtering**
+    GET /api/tasks/?is_completed=true (or false)
 
