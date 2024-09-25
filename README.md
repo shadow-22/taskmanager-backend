@@ -39,21 +39,22 @@ This is the backend part of the **Task Manager** app, built using **Django** and
 6. **Start the development server:**
     python manage.py runserver
 
-The API will be available at http://127.0.0.1:8000/api/
+    The API will be available at http://127.0.0.1:8000/api/
 
-7. **API Endpoints**
+7. **API Endpoints:**
 
     User Registration: POST /api/register/
-    User Login: POST /api/login/
-    Task List and Create: GET/POST /api/tasks/
-    Task Update and Delete: PUT/DELETE /api/tasks/<id>/
-    Pagination and Filtering
-    The task listing API supports pagination and filtering:
 
-8. **Pagination**
+    User Login: POST /api/login/
+
+    Task List and Create: GET/POST /api/tasks/
+
+    Task Update and Delete: PUT/DELETE /api/tasks/<id>/
+
+8. **Pagination:**
     GET /api/tasks/?page=<page_number>
     Tasks are paginated with the page parameter.
 
-9. **Filtering**
+9. **Filtering:**
     GET /api/tasks/?is_completed=true (or false)
 
